@@ -1,0 +1,36 @@
+﻿<controls:ChildWindow
+           xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+           xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+           xmlns:controls="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls"
+           xmlns:sdk="http://schemas.microsoft.com/winfx/2006/xaml/presentation/sdk" x:Class="S7.Forms.frm_incidencias_popup_incidencias"
+           Width="896.699" Height="300" 
+           Title="Mis incidencias">
+    <Grid x:Name="LayoutRoot" Margin="2">
+
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+
+
+
+
+
+
+        <Button x:Name="CancelButton" Content="Cancelar" Click="CancelButton_Click" Width="75" Height="23" HorizontalAlignment="Right" Margin="0,12,0,0" Grid.Row="1" Grid.Column="1" />
+        <Button x:Name="OKButton" Content="OK" Click="OKButton_Click" Width="75" Height="23" HorizontalAlignment="Right" Margin="0,12,79,0" Grid.Row="1" Grid.Column="1" />
+        <sdk:DataGrid x:Name="dg_incidencias" IsReadOnly="True" AutoGenerateColumns="False" HorizontalAlignment="Left" Height="226" VerticalAlignment="Top" Width="875" SelectionChanged="dg_incidencias_SelectionChanged">
+
+            <sdk:DataGrid.Columns>
+                <sdk:DataGridTextColumn Binding="{Binding ate_inc_idn}" Header="Id" CanUserReorder="True" CanUserResize="True" CanUserSort="True" Width="Auto" />
+                <sdk:DataGridTextColumn Binding="{Binding inc_nombre}" Header="Incidencia" CanUserReorder="True" CanUserResize="True" CanUserSort="True" Width="Auto" />
+                <sdk:DataGridTextColumn Binding="{Binding nombre}" Header="Alumno" CanUserReorder="True" CanUserResize="True" CanUserSort="True" Width="Auto" />
+                <sdk:DataGridTextColumn Binding="{Binding pro_nombre}" Header="Produco" CanUserReorder="True" CanUserResize="True" CanUserSort="True" Width="Auto" />
+                <sdk:DataGridTextColumn Binding="{Binding ate_inc_fecha_ingreso}" Header="Fecha ingreso" CanUserReorder="True" CanUserResize="True" CanUserSort="True" Width="Auto" />
+
+            </sdk:DataGrid.Columns>
+
+        </sdk:DataGrid>
+    </Grid>
+</controls:ChildWindow>

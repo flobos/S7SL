@@ -1,0 +1,2 @@
+C:\S7\S7
+Generated_Code\S7.Web.g.cs

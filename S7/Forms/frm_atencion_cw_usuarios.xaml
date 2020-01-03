@@ -1,0 +1,34 @@
+﻿<sdk:ChildWindow
+           xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+           xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+           xmlns:controls="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls"
+           xmlns:sdk="http://schemas.microsoft.com/winfx/2006/xaml/presentation/sdk" xmlns:toolkit="http://schemas.microsoft.com/winfx/2006/xaml/presentation/toolkit" x:Class="S7.Forms.frm_atencion_cw_usuarios"
+           Width="683.562" Height="380.137" 
+           Title="Usuarios">
+    <Grid x:Name="cb_criterio" Margin="2">
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <Button x:Name="CancelButton" Content="Cancel" Click="CancelButton_Click" Width="75" Height="23" HorizontalAlignment="Right" Margin="0,12,0,0" Grid.Row="1" />
+        <Button x:Name="OKButton" Content="OK" Click="OKButton_Click" Width="75" Height="23" HorizontalAlignment="Right" Margin="0,12,79,0" Grid.Row="1" />
+        <sdk:DataGrid x:Name="dg_usuarios" IsReadOnly="True" AutoGenerateColumns="False" HorizontalAlignment="Left" Height="253" Margin="0,43,0,0" VerticalAlignment="Top" Width="662" SelectionChanged="dg_usuarios_SelectionChanged">
+
+
+            <sdk:DataGrid.Columns>
+                <sdk:DataGridTextColumn Binding="{Binding usu_idn}" Header="ID" CanUserReorder="True" CanUserResize="True" CanUserSort="True" Width="Auto" />
+                <sdk:DataGridTextColumn Binding="{Binding usu_id_nacional}" Header="Rut" CanUserReorder="True" CanUserResize="True" CanUserSort="True" Width="Auto" />
+                <sdk:DataGridTextColumn Binding="{Binding nombre}" Header="Nombre" CanUserReorder="True" CanUserResize="True" CanUserSort="True" Width="Auto" />
+                <sdk:DataGridTextColumn Binding="{Binding contador}" Header="Productos" CanUserReorder="True" CanUserResize="True" CanUserSort="True" Width="Auto" />
+            </sdk:DataGrid.Columns>
+
+
+        </sdk:DataGrid>
+        <TextBox x:Name="txt_criterio" HorizontalAlignment="Left" Height="23" Margin="10,15,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="237"/>
+        <sdk:Label HorizontalAlignment="Left" Height="15" Margin="10,0,0,0" VerticalAlignment="Top" Width="99" Content="Criterio" FontWeight="Bold"/>
+        <ComboBox HorizontalAlignment="Left" Margin="252,15,0,0" VerticalAlignment="Top" Width="209" Height="23"/>
+        <Button x:Name="btn_buscar" Content="Buscar&#xA;" HorizontalAlignment="Left" Margin="475,15,0,0" VerticalAlignment="Top" Width="75" Height="23" FontWeight="Bold" Click="btn_buscar_Click"/>
+        <toolkit:BusyIndicator x:Name="bi_usaurios" Content="" HorizontalAlignment="Left" Margin="247,127,0,0" VerticalAlignment="Top" BusyContent="Procesando...."/>
+    </Grid>
+</sdk:ChildWindow>
